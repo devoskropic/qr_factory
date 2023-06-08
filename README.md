@@ -29,13 +29,17 @@ applied things here, to be more flexible into include it on my new repos...
 
 ### Ver 2.0.1 at 08/06/2023
 > Tried to add bottom navbar bloc but decide it'll be available from another project to
-learn how to use bloc for these navigation (feh_bloc_tab A.K.A. BLoC Tabz) 
+learn how to use bloc for these navigation (feh_bloc_tab A.K.A. BLoC Tabz).
+
 > Gesture Detector added to main in order to hide keyboard when user tabs outside the
-textformfields
+textformfields.
+
 > Modified common helper files to improve form views and how to show QR codes, including 
-the usage of settings to add a view that let's the user choose between normal or image qr
-> Added some extra validations to textformfields like url regular expressions
-> Tag of version (2.0.0)
+the usage of settings to add a view that let's the user choose between normal or image qr.
+
+> Added some extra validations to textformfields like url regular expressions.
+
+> Tag of version (2.0.0).
 
 
 ### 31/03/2023
