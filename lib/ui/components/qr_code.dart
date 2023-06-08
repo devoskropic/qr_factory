@@ -40,7 +40,7 @@ class QrCode {
       backgroundColor: Colors.brown.shade300,
       embeddedImage: NetworkImage(imgUrl, scale: BorderSide.strokeAlignCenter),
       embeddedImageStyle: QrEmbeddedImageStyle(
-        size: const Size(90, 90),
+        size: const Size(60, 60),
         color: Colors.transparent,
       ),
       data: url,

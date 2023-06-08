@@ -1,12 +1,11 @@
 class RouteNames {
-  RouteNames._internalConstructor();
+  RouteNames._constructor();
+  static final RouteNames _instance = RouteNames._constructor();
 
-  static final RouteNames _instance = RouteNames._internalConstructor();
+  static const String initialRoute = "/";
+  static const String homeScreenRoute = "/Qr_Home";
 
   factory RouteNames() {
     return _instance;
   }
-
-  static const String rInitialRoute = "/";
-  static const String rHomeScreenRoute = "/Qr_Home_Route";
 }

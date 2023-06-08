@@ -37,23 +37,27 @@ class QrForm {
                 ),
                 const SizedBox(height: 20),
                 // URL BUTTON
-                _cttf.cusTextFormField(
+                _cttf.requiredFormField(
+                  autofocus: true,
+                  textInputAction: TextInputAction.next,
                   hintText: 'ej. www.instagram.com/@micuenta',
                   labelText: 'Pega tu URL',
                   onChanged: (value) {
                     formData.txtUrl = value;
                   },
-                  validate: true,
+                  isRequired: true,
                 ),
                 const SizedBox(height: 10),
                 //IMAGE URL BUTTON
-                _cttf.cusTextFormField(
+                _cttf.requiredFormField(
+                  autofocus: true,
+                  textInputAction: TextInputAction.done,
                   hintText: 'ej. shorturl.at/owSY9',
                   labelText: 'URL de la imagen',
                   onChanged: (value) {
                     formData.imgUrl = value;
                   },
-                  validate: false,
+                  isRequired: false,
                 ),
                 // Center(
                 //   child: Image.asset(

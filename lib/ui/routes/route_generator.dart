@@ -6,7 +6,7 @@ import 'route_names.dart';
 class RouteGenerator {
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RouteNames.rInitialRoute:
+      case RouteNames.initialRoute:
         return MaterialPageRoute(
           builder: (context) {
             return BlocProvider<SplashScreenCubit>(
@@ -15,11 +15,7 @@ class RouteGenerator {
             );
           },
         );
-      // case RouteNames.rHomeScreenRoute:
-      //   return MaterialPageRoute(
-      //     builder: (context) => const QrHome(),
-      //   );
-      case RouteNames.rHomeScreenRoute:
+      case RouteNames.homeScreenRoute:
         return MaterialPageRoute(
           builder: (context) {
             return BlocProvider<QrCodeBloc>(

@@ -12,6 +12,7 @@ class QrSimple extends StatefulWidget {
 class _QrSimpleState extends State<QrSimple> {
   final _formKey = GlobalKey<FormState>();
   FormData formData = FormData();
+  bool showQr = false;
   String url = '';
 
   final CustomTextFormField _cttf = CustomTextFormField();
@@ -41,13 +42,15 @@ class _QrSimpleState extends State<QrSimple> {
                 ),
                 const SizedBox(height: 20),
                 // URL BUTTON
-                _cttf.cusTextFormField(
-                  hintText: 'ej. www.instagram.com/@micuenta',
+                _cttf.requiredFormField(
+                  autofocus: true,
+                  textInputAction: TextInputAction.done,
+                  hintText: 'ej. www.github.com/myuser',
                   labelText: 'Pega tu URL',
                   onChanged: (value) {
                     formData.txtUrl = value;
                   },
-                  validate: true,
+                  isRequired: true,
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
@@ -66,22 +69,34 @@ class _QrSimpleState extends State<QrSimple> {
                       debugPrint('Settin\' state');
                       setState(() {
                         url = formData.txtUrl!;
+                        showQr = true;
                       });
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('ohh you just tapped me'),
+                          content: Text('Qr code on the go!'),
                           duration: Duration(milliseconds: 500),
                         ),
                       );
                     }),
                 const SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: Colors.black),
-                    borderRadius: const BorderRadius.all(Radius.circular(5)),
-                  ),
-                  child: qr.myQR(url: url),
-                ),
+                showQr
+                    ? Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 2, color: Colors.black),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5)),
+                        ),
+                        child: qr.myQR(url: url),
+                      )
+                    : Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/images/dummy-qr.jpg',
+                                height: 220)
+                          ],
+                        ),
+                      ),
               ],
             ),
           ),

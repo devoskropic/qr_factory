@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:qr_factory/business_logic/bloc/multi_bloc_providers_list.dart';
+import 'package:qr_factory/business_logic/multi_bloc_providers_list.dart';
 import 'package:qr_factory/business_logic/business_logic_imports.dart';
 import 'package:qr_factory/ui/routes/route_generator.dart';
 
@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: MultiBlocProviderList.providers(),
+      providers: MultiBlocProviderList.blocProviders(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         builder: (context, child) {

@@ -3,7 +3,11 @@ part of 'qr_code_bloc.dart';
 abstract class QrCodeState {
   final int? codesLeft;
   final bool justBegun;
-  const QrCodeState({this.justBegun = true, this.codesLeft});
+
+  const QrCodeState({
+    this.codesLeft,
+    this.justBegun = true,
+  });
 
   // @override
   // List<Object> get props => [codesLeft];
@@ -11,6 +15,10 @@ abstract class QrCodeState {
 
 class InitialState extends QrCodeState {
   const InitialState() : super(justBegun: true);
+}
+
+class SettingsState extends QrCodeState {
+  const SettingsState() : super(justBegun: false);
 }
 
 // Auth => LoggedScreen

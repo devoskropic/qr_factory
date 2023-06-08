@@ -28,17 +28,22 @@ class _QrHomeState extends State<QrHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
-      appBar: _cab.titledAppBar(
-        context,
-        "QR Generator",
-        Colors.white,
-        Colors.black,
-        52.0,
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: Colors.blueGrey[900],
+        appBar: _cab.titledAppBar(
+          context,
+          "QR Generator",
+          Colors.white,
+          Colors.black,
+          52.0,
+        ),
+        body: _pages[_selectedIndex],
+        bottomNavigationBar: buildBottomNavigationBar(),
       ),
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: buildBottomNavigationBar(),
     );
   }
 

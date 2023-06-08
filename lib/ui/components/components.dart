@@ -7,3 +7,6 @@ export 'custom_appbar.dart';
 export 'custom_textformfield.dart';
 export 'qr_code.dart';
 // export 'qr_form.dart';
+
+// Extensions
+export 'ext_string.dart';
